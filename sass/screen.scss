@@ -1,0 +1,334 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/transform";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "compass/css3/background-size";
+@import "compass/css3/box-shadow";
+@import "compass/css3/selection";
+@import "compass/css3/flexbox";
+
+$mainLinkColor : #c39f76;
+$mainColorText : #5a5a5a;
+$mainColorDark : #1b1b1b;
+
+@font-face {
+    font-family: 'TeXGyreAdventor';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/texgyreadventor.ttf);
+}
+
+body,html{
+    font-family: TeXGyreAdventor;
+    height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	&:hover{
+			text-decoration: none;
+	}
+}
+
+header{
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	@include display-flex;
+    @include flex-direction(row);
+    @include justify-content(flex-end);
+	@include align-items(center);
+	padding: 25px 30px;
+
+	.menu {
+	   	@include display-flex;
+	    @include flex-direction(row);
+	    @include justify-content(flex-end);
+	    @include transition(all 0.5s ease-out);
+	    li {
+	        list-style: none;
+			@include align-items(center);
+	        margin: 0 15px;
+	        padding: 15px 0;
+	        position: relative; 
+	        ul{
+	        	z-index: 2;
+	        	padding-top: 10px;
+	        	display: none;
+	        	position: absolute;
+		        left: 0;   
+		        @include transition(all 0.3s ease-out);
+		        li{
+		        	@include align-items(flex-start);
+		        	margin: 0;
+			    }
+	        }
+	        a{
+		        width: 150px;
+		        height: 30px;
+		        color:#333;
+		        text-decoration: none;
+		        text-transform: uppercase;
+		        font-size: 12px;
+	    		font-style: normal;
+		        letter-spacing: 1px;
+		        font-weight: 600;
+		        font-family: TeXGyreAdventor;
+		        @include transition(all 0.3s ease-out);
+		        &:hover{
+		        	color: $mainLinkColor;
+		        }
+	        }
+	        &:hover ul{
+	        	@include display-flex;
+			    @include flex-direction(column);
+			    @include justify-content(flex-start);
+	        }
+	    }
+	}
+}
+.postWrap.slick-slider{
+		margin: 0 !important;
+	}
+.postWrap{
+	overflow: hidden;
+	
+	.slick-slide{
+		@include display-flex;
+	}
+}
+
+.mainPost{
+	@include display-flex;
+	&:nth-child(odd){
+		@include flex-direction(row-reverse);	
+	}
+	&__img{
+		overflow: hidden;		
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__description{
+		//margin: 30px;
+		//padding: 20px;
+		//border: 1px solid $mainLinkColor;
+		background-image: url(../images/bg_g.jpg);
+		@include display-flex;
+	    @include flex-direction(column);
+	    @include justify-content(center);
+      	@include align-items(center);
+      				text-align: center;
+
+	
+		.line{
+			width: 100px;
+    		height: 8px;
+			background-image: url(../images/line.png);
+		}
+		.title{
+			font-size: 50px;
+			padding: 35px 0px;
+
+		}
+		.text{
+			color: $mainColorText;
+			width: 70%;
+			margin: 35px auto;
+			font-size: 16px;
+			line-height: 25px;
+			letter-spacing: 1px;
+		}
+	}
+	.col-md-6{
+		padding: 0;
+	}
+}
+.row{
+	margin: 0;
+}
+.col-md-6{
+	padding: 0;
+}
+#first{
+	display: none;
+}
+
+
+.sidebar{
+	background-color: $mainColorDark;
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	.menu  {
+    //margin-top: 70px;
+   // font-family: casper_bold;
+    list-style: none;
+    padding:20px 50px;
+    *zoom: 1;
+    &:before, &:after{
+        content: " "; 
+        display: table; 
+    }
+    ul {
+        list-style: none;
+        width: 10em;
+    }
+    a {
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        padding: 2px 15px;
+        text-transform: uppercase;
+        color: lighten($mainColorText,10%);
+        @include transition(all,0.3s);
+        &:hover {
+            color: $mainLinkColor;
+        }
+    }
+    li{
+        padding: 10px;
+        &:before{
+            content: " ";
+        }
+        ul{
+            display: none;
+            margin-left: 30px;
+            margin-bottom: -10px;
+            margin-top: 10px;
+            li{
+                padding: 5px;
+                a{
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    .submenu{
+        margin-left: -20px;
+        &:before{
+            margin-right: 10px;
+            font-weight: 100;
+            font-size: 16px;
+            content: "+";
+        }
+    }
+	    &_active{
+	        color: $mainLinkColor !important;
+	    }
+	}
+
+	.menu :after {
+	    clear: both;
+	}
+}
+
+.logo{
+	width: 150px;
+	height: 150px;
+	margin: 40px 40px 20px;
+	img{
+		height: 100%;
+		width: 100%;
+		object-fit:cover;
+	}
+}
+
+.slider{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	img{
+		height: 100%;
+		width: 100%;
+		object-fit:cover;
+
+	}
+	.slick-list,.slick-track{
+		height: 100%;
+	}
+}
+
+.container-fluid{
+	padding: 0;
+	margin: 0;
+}
+
+#main{
+	margin-left: 300px;
+}
+
+.title{
+	text-align: center;
+	margin-top: 70px;
+	//margin-bottom: 30px;
+	font-size: 20px;
+	letter-spacing: 5px;
+	font-weight: 600;
+	&__sub{
+		text-align: center;
+		font-size: 14px;
+		font-style: italic;
+		color: $mainColorText;
+		margin-top: 20px;
+	}
+}
+
+.line{
+	@include display-flex;
+	@include flex-direction(row);
+	@include justify-content(center);
+    @include align-items(center);
+	&__doted{
+	    border: none;
+	    border-top: 1px dotted $mainColorText;
+	    width: 200px;
+	}
+	img{
+		width: 100px;
+		height: 100px;
+		object-fit:cover;
+		
+	}
+	margin-bottom: 40px;
+}
+
+.product{
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+	&__img{
+		width: 100%;
+		height: 100%;
+		margin-bottom: 30px;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__title{
+		float:left;
+	}
+	&__price{
+		text-align: right;
+	}
+	&__description{
+		font-weight: 100;
+		font-size: 13px;
+		font-style: italic;
+		color: $mainColorText;
+		text-transform: none;
+		margin: 10px 0 30px;
+
+	}
+	&__rating{}
+}

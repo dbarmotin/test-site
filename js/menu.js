@@ -4,9 +4,11 @@ $(document).ready(function(){
     var urlMain = 'file:///D:/workspace/photo/index.html';
     var currentUrl = document.location.href;
     setRowHeight();
+    setGridWidth();
 
     $(window).resize(function() {
         setRowHeight();
+        setGridWidth();
     });
 
     function setRowHeight(){
@@ -15,6 +17,30 @@ $(document).ready(function(){
         $('.mainPost').css('height', height);
         $('.slider').css('height', height);
         $('.postWrap').css('height', height);
+
+    }
+
+    function setGridWidth(){
+        var sidebarWidth = $('.sidebar').width();
+        var screenWidth = $(window).width() - sidebarWidth;
+        var gridWidth = 0;
+
+        if(screenWidth > 1200 ){
+            gridWidth = screenWidth / 4;
+        }else if(screenWidth <= 1200 && screenWidth > 768){
+            gridWidth = screenWidth / 3;
+
+        }else if(screenWidth <= 768 && screenWidth >568){
+            gridWidth = screenWidth / 2;
+        }else{
+            gridWidth = screenWidth;
+        }
+        console.log('sidebar width = ' + sidebarWidth);
+        console.log('screenWidth width = ' + screenWidth);
+        console.log('gridWidth width = ' + gridWidth);
+
+        $('.productWrap').css('width', gridWidth);
+    
 
     }
    /* $('.menu').fadeOut('300', function() {});

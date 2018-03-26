@@ -15,6 +15,8 @@
 $mainLinkColor : #c39f76;
 $mainColorText : #5a5a5a;
 $mainColorDark : #1b1b1b;
+$mainColorLight :#f4f4f4;
+$linkColor : #8a8f6a;
 
 @font-face {
     font-family: 'TeXGyreAdventor';
@@ -31,7 +33,7 @@ body,html{
 a{
 	text-decoration: none;
 	color: black;
-	&:hover{
+	&:hover, &:focus, &:active{
 			text-decoration: none;
 	}
 }
@@ -168,11 +170,15 @@ header{
 	position: fixed;
 	width: 300px;
 	height: 100%;
+	z-index: 1;
+	@include display-flex;
+	@include flex-direction(column);
+	@include justify-content(center);
 	.menu  {
     //margin-top: 70px;
    // font-family: casper_bold;
     list-style: none;
-    padding:20px 50px;
+    //padding:20px 50px;
     *zoom: 1;
     &:before, &:after{
         content: " "; 
@@ -181,35 +187,68 @@ header{
     ul {
         list-style: none;
         width: 10em;
+       
     }
     a {
-        font-size: 13px;
-        letter-spacing: 2px;
-        font-weight: 600;
-        padding: 2px 15px;
+	    height: 44px;
+	    line-height: 44px;
+	    padding: 0 20px;
+        font-size: 12px;
+        letter-spacing: 3px;
+        font-weight: 300;
         text-transform: uppercase;
-        color: lighten($mainColorText,10%);
+        display: block;
+        //color: lighten($mainColorText,10%);
+        color:white;
+		border-bottom: 1px dotted $mainColorText;
         @include transition(all,0.3s);
         &:hover {
             color: $mainLinkColor;
         }
     }
     li{
-        padding: 10px;
+        
+	    padding: 0 30px;
         &:before{
             content: " ";
         }
         ul{
-            display: none;
-            margin-left: 30px;
-            margin-bottom: -10px;
-            margin-top: 10px;
+        	background-color: darken($mainColorDark,5%);
+            position: absolute;
+		    left: 100%;
+		    display: none;
+		    z-index: 1001;
+            width: 250px;
+            height: 100%;
+    		top: 0;
+    		opacity: 0;
+    		@include transition(opacity,0.3s);
+
             li{
-                padding: 5px;
+                //padding: 5px;
                 a{
-                    font-size: 11px;
+                   	line-height: 34px;
+					height: 34px;
+					font-size: 10px;
+
                 }
+                &:hover{
+		    		background-color: darken($mainColorDark,10%);
+        		}
             }
+        }
+        &:hover{
+    		background-color: darken($mainColorDark,5%);
+    		> a{
+    			border-color: transparent;
+    		}
+        }
+        &:hover ul{
+        	opacity: 1;
+    		@include transition(opacity,0.3s);
+        	@include display-flex;
+		    @include flex-direction(column);
+		    @include justify-content(center);
         }
     }
     .submenu{
@@ -235,6 +274,8 @@ header{
 	width: 150px;
 	height: 150px;
 	margin: 40px 40px 20px;
+	position: fixed;
+    top: 0;
 	img{
 		height: 100%;
 		width: 100%;
@@ -246,6 +287,7 @@ header{
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	margin-bottom: 70px;
 	img{
 		height: 100%;
 		width: 100%;
@@ -268,7 +310,7 @@ header{
 
 .title{
 	text-align: center;
-	margin-top: 70px;
+	margin-top: 20px;
 	//margin-bottom: 30px;
 	font-size: 20px;
 	letter-spacing: 5px;
@@ -301,11 +343,20 @@ header{
 	margin-bottom: 40px;
 }
 
+.row{
+	@include display-flex;
+	@include flex-direction(row);
+	@include justify-content(left);
+	@include flex-wrap(wrap);
+    @include align-items(center);
+}
+
 .product{
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 14px;
+	margin: 10px;
 	&__img{
 		width: 100%;
 		height: 100%;
@@ -332,3 +383,83 @@ header{
 	}
 	&__rating{}
 }
+
+.advert{
+	margin-top: 20px;
+	background-color: $mainColorLight;
+	padding: 50px;
+	text-align: center;
+}
+
+footer{
+	background-color: $mainColorDark;
+	padding: 30px;
+	h3{
+		font-size: 12px;
+		letter-spacing: 2px;
+		line-height: 36px;
+		text-align: center;
+		color: $mainLinkColor;
+	}
+}
+
+.button {
+	z-index: 2;
+
+	margin: 30px 10px 0;
+    background: none;
+    cursor: pointer;
+    padding: 15px 80px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    @include transition(all,0.3s);
+    &:before {
+		width: 100%;
+		height: 0;
+		top: 0;
+		left: 0;
+
+		content: '';
+		position: absolute;
+		z-index: -1;
+		@include transition(all,0.3s);
+
+	}
+	&:hover:before,&:active:before{
+		height: 100%;
+	}
+}
+
+.button-1 {
+	border: 1px solid $mainColorText;
+	color: $mainColorDark;
+}
+
+.button-2 {
+	border: 1px solid $linkColor;
+	background-color: $linkColor;
+	color: white;
+}
+
+/* Button 1b */
+.button-1b:before {
+	background: $mainColorDark;
+}
+
+.button-1b:hover,
+.button-1b:active {
+	color: white;
+}
+
+/* Button 1b */
+.button-2b:before {
+	background: darken($linkColor,25%);
+}
+
+.button-2b:hover,
+.button-2b:active {
+	color: white;
+}
+

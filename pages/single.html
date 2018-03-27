@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <title>Demo</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+	<link rel="stylesheet" href="../stylesheets/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../stylesheets/animate.css">
+	<link rel="stylesheet" href="../stylesheets/styles.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/slick.css"/>
+	<link rel="stylesheet" href="../stylesheets/screen.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="../images/logo3.png" alt="">
+		</div>
+		<ul class= "menu">
+			<li ><a href="#">Главная</a></li>
+			<li ><a href="pages/about.html">Обо мне</a></li>
+			<li >
+				<a class = "submenu"href="#">Портфолио</a>
+				<ul>
+					<li><a href="pages/shop.html">Wedding</a></li>
+					<li><a href="pages/shop.html">Love story</a></li>
+					<li><a href="#">Portrait</a></li>
+					<li><a href="#">Famili</a></li>
+				</ul>
+			</li>
+			<li ><a href="#">Отзывы</a></li>
+			<li ><a href="#">Контакты</a></li>
+			<li ><a href="#">Блог</a></li>
+		</ul>
+		<div class="header__icons">
+			<i class="fas fa-search"></i>
+			<i class="fas fa-cart-plus"></i>
+		</div>
+	</header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="galery">
+					<div class="slider-for">
+						<img class="my-foto" src="../images/products/s1.jpg" alt="" data-large="../images/products/s1.jpg">
+						<img class="my-foto" src="../images/products/s2.jpg" alt="">
+						<img class="my-foto" src="../images/products/s3.jpg" alt="">
+						<img class="my-foto" src="../images/products/s4.jpg" alt="">
+					</div>
+					<div class="slider-nav">
+						<img src="../images/products/s1.jpg" alt="">
+						<img src="../images/products/s2.jpg" alt="">
+						<img src="../images/products/s3.jpg" alt="">
+						<img src="../images/products/s4.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6"></div>
+		</div>			
+	</div>
+	<script type="text/javascript" src="../js/menu.js"></script>
+	<script type="text/javascript" src="../js/slick.min.js"></script>
+	<script src="../js/zoomsl-3.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		  $('.slider-for').slick({
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  arrows: false,
+			  fade: true,
+			  asNavFor: '.slider-nav'
+			});
+			$('.slider-nav').slick({
+			  slidesToShow: 4,
+			  slidesToScroll: 1,
+			  asNavFor: '.slider-for',
+			  dots: true,
+			  centerMode: true,
+			  focusOnSelect: true
+			});
+		});
+	</script>
+	<script>
+		jQuery(function(){
+		if(!$.fn.imagezoomsl){
+			$('.msg').show();
+			return;
+		}
+	     else $('.msg').hide();
+		$('.my-foto').imagezoomsl({ 
+
+			 zoomrange: [1, 4],
+			 zoomstart: 2,
+			 innerzoom: true,
+			 magnifierborder: "none"	
+		});  
+	});
+</script>
+</body>
+</html>

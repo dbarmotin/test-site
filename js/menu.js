@@ -43,6 +43,19 @@ $(document).ready(function(){
     
 
     }
+
+
+    $(function(){
+        $(window).scroll(function() {
+            if($(this).scrollTop() >= 1) {
+                $('header').addClass('stickMenu');
+            }
+            else{
+                $('header').removeClass('stickMenu');
+            }
+        });
+    });
+
    /* $('.menu').fadeOut('300', function() {});
 
     $(".toggleMenu").click(function(e) {

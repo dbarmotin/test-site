@@ -13,33 +13,36 @@
 </head>
 <body>
 	<header>
-		<div class="logo">
-			<img src="../images/logo3.png" alt="">
-		</div>
-		<ul class= "menu">
-			<li ><a href="#">Главная</a></li>
-			<li ><a href="pages/about.html">Обо мне</a></li>
-			<li >
-				<a class = "submenu"href="#">Портфолио</a>
-				<ul>
-					<li><a href="pages/shop.html">Wedding</a></li>
-					<li><a href="pages/shop.html">Love story</a></li>
-					<li><a href="#">Portrait</a></li>
-					<li><a href="#">Famili</a></li>
-				</ul>
-			</li>
-			<li ><a href="#">Отзывы</a></li>
-			<li ><a href="#">Контакты</a></li>
-			<li ><a href="#">Блог</a></li>
-		</ul>
-		<div class="header__icons">
-			<i class="fas fa-search"></i>
-			<i class="fas fa-cart-plus"></i>
+		<div class="header">		
+			<div class="logo">
+				<img src="../images/logo3.png" alt="">
+			</div>
+			<ul class= "menu">
+				<li ><a href="#">Главная</a></li>
+				<li ><a href="pages/about.html">Обо мне</a></li>
+				<li >
+					<a class = "submenu"href="#">Портфолио</a>
+					<ul>
+						<li><a href="pages/shop.html">Wedding</a></li>
+						<li><a href="pages/shop.html">Love story</a></li>
+						<li><a href="#">Portrait</a></li>
+						<li><a href="#">Famili</a></li>
+					</ul>
+				</li>
+				<li ><a href="#">Отзывы</a></li>
+				<li ><a href="#">Контакты</a></li>
+				<li ><a href="#">Блог</a></li>
+			</ul>
+			<div class="header__icons">
+				<i class="fas fa-search"></i>
+				<i class="fas fa-cart-plus"></i>
+			</div>
 		</div>
 	</header>
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6">
+		<div class="row myContainer">
+		
+			<div class="col-md-6" id = "galery">
 				<div class="galery">
 					<div class="slider-for">
 						<img class="my-foto" src="../images/products/s1.jpg" alt="" data-large="../images/products/s1.jpg">
@@ -55,10 +58,90 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6"></div>
+			<div class="col-md-6">
+				<div class="post">
+					<div class="post__name"><h1>Anchor Denim Shirt</h1></div>
+					<div class="post__description"><h3>Comforting summer blend</h3></div>
+					<div class="post__line"></div>
+					<div class="post__price">£189.00</div>
+					<div class="post__rating">
+						<i class="far fa-star"></i>
+						<i class="far fa-star"></i>
+						<i class="far fa-star"></i>
+						<i class="far fa-star"></i>
+						<i class="far fa-star post__rating_bad"></i>
+					</div>
+					<div class="post__review">4 reviews</div>
+					<div class="post__line"></div>
+					<div class="post__text"><p>Summertime in the city isn't the reason to give up yacht party and this beautiful short sleeve Anchor Denim shirt is your best bet. Easy to wear and ready for those beach parties in the afternoon, made of light weight cotton blend no need to iron style perfect for the on the run lifestyle.</p></div>
+					<div class="post__block">
+						<div class="post__count">
+							<p id = "sum">0</p>
+							<div class="post__count_arrows">
+								<i class="fas fa-angle-up" id = "more"></i>
+								<i class="fas fa-angle-down" id = "less"></i>
+							</div>
+						</div>
+						<div class="post__buttons">
+							<button>
+								<i class="fas fa-cart-plus"></i>
+								<p>Add to cart</p>
+							</button>
+							<button><i class="far fa-heart"></i></button>
+						</div>
+					</div>
+					<div class="post__line"></div>
+					<div class="post__share">
+						<h4>SHARE</h4>
+						<div class="post__share_items">
+							<i class="fab fa-facebook-f"></i>
+							<i class="fab fa-twitter"></i>
+							<i class="fab fa-vk"></i>
+							<i class="fab fa-instagram"></i>
+						</div>
+					</div>
+					<div class="post__categories">
+						<span>Categories: </span>
+						<a href="#">Bags,</a>
+						<a href="#">Blazers,</a>
+						<a href="#">Boots,</a>
+						<a href="#">Jackets,</a>
+						<a href="#">Pants,</a>
+						<a href="#">Shirts.</a>    
+					</div>
+					<div class="post__categories">
+						<span>Tag: </span>
+						<a href="#">shoes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row myContainer">
+			<div class="tab">
+				<div class="tab__buttons">
+					 <button class="tab__buttons_active" onclick="openCity(this,'description')">Description</button>
+					 <button onclick="openCity(this,'info')">Additional information</button>
+					 <button onclick="openCity(this,'review')">Reviews(4)</button>
+				</div>
+				<div id="description" class="tab__value">
+				  	<h2>London</h2>
+				  	<p>London is the capital of England.</p>
+				</div>
+
+				<div id="info" class="tab__value" style="display:none">
+				  	<h2>Paris</h2>
+				  	<p>Paris is the capital of France.</p> 
+				</div>
+
+				<div id="review" class="tab__value" style="display:none">
+				  	<h2>Tokyo</h2>
+				  	<p>Tokyo is the capital of Japan.</p>
+				</div>
+			</div>
 		</div>			
 	</div>
 	<script type="text/javascript" src="../js/menu.js"></script>
+	<script type="text/javascript" src="../js/counter.js"></script>
 	<script type="text/javascript" src="../js/slick.min.js"></script>
 	<script src="../js/zoomsl-3.0.min.js"></script>
 	<script>
@@ -89,12 +172,25 @@
 	     else $('.msg').hide();
 		$('.my-foto').imagezoomsl({ 
 
-			 zoomrange: [1, 4],
+			 zoomrange: [1, 2],
 			 zoomstart: 2,
 			 innerzoom: true,
 			 magnifierborder: "none"	
 		});  
 	});
+</script>
+<script>
+	function openCity(elmnt, cityName) {
+		$('.tab__buttons_active').removeClass('tab__buttons_active');
+
+		$(elmnt).addClass('tab__buttons_active');
+	    var i;
+	    var x = document.getElementsByClassName("tab__value");
+	    for (i = 0; i < x.length; i++) {
+	       x[i].style.display = "none";  
+	    }
+	    document.getElementById(cityName).style.display = "block";  
+	}
 </script>
 </body>
 </html>

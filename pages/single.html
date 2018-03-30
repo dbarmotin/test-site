@@ -40,7 +40,7 @@
 		</div>
 	</header>
 	<div class="container-fluid">
-		<div class="row myContainer">
+		<div class="row myContainer" id = "myContainer">
 		
 			<div class="col-md-6" id = "galery">
 				<div class="galery">
@@ -124,21 +124,196 @@
 					 <button onclick="openCity(this,'review')">Reviews(4)</button>
 				</div>
 				<div id="description" class="tab__value">
-				  	<h2>London</h2>
-				  	<p>London is the capital of England.</p>
+				  	<p>Praesent volutpat ut nisl in hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam porttitor, lacus in luctus molestie, libero justo ullamcorper nulla, sed lacinia erat metus eget diam. Morbi volutpat lectus sit amet diam vestibulum sagittis. Aenean eu condimentum leo.</p>
 				</div>
 
 				<div id="info" class="tab__value" style="display:none">
-				  	<h2>Paris</h2>
-				  	<p>Paris is the capital of France.</p> 
+				  	<table class="shop_attributes">
+						<tbody>
+							<tr class="">
+								<th>Weight</th>
+								<td class="product_weight">1.9 kg</td>
+							</tr>
+							<tr class="alt">
+								<th>Dimensions</th>
+								<td class="product_dimensions">51 x 67 x 94 cm</td>
+							</tr>
+							<tr class="">
+								<th>Color</th>
+								<td><p>red, blue, yellow, black</p></td>
+							</tr>
+							<tr class="alt">
+								<th>Top Coating</th>
+								<td><p>50% cashmere, 35% cotton, 15% acryl</p></td>
+							</tr>
+							<tr class="">
+								<th>Filling</th>
+								<td><p>goose fuzz, coconut fiber</p></td>
+							</tr>
+
+						
+							<tr class="alt">
+								<th>Care Instructions</th>
+								<td><p>clean with upholstery shampoo</p></td>
+							</tr>
+
+						
+							<tr class="">
+								<th>Article Number</th>
+								<td><p>408-71.119</p>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 
 				<div id="review" class="tab__value" style="display:none">
-				  	<h2>Tokyo</h2>
-				  	<p>Tokyo is the capital of Japan.</p>
+				  	<div class="row">
+				  		<div class="col-md-6">
+				  			<h4>REVIEWS</h4>
+				  			<div class="comment">
+				  				<div class="comment__name"><p>Dima</p></div>
+				  				<div class="comment__date"><p>11.21.2017</p></div>
+				  				<div class="comment__text"><p>The Best Products in this collection</p></div>
+				  			</div>
+				  			<div class="comment">
+				  				<div class="comment__name"><p>Vasya</p></div>
+				  				<div class="comment__date"><p>01.05.2018</p></div>
+				  				<div class="comment__text"><p>Wow! Cool shirt! Really comfortable to wear even in Summer.</p></div>
+				  			</div>
+				  			<div class="comment">
+				  				<div class="comment__name"><p>Olya</p></div>
+				  				<div class="comment__date"><p>12.07.2017</p></div>
+				  				<div class="comment__text"><p>Nice product! Probably the best solution for casual look.</p></div>
+				  			</div>
+				  			<div class="comment">
+				  				<div class="comment__name"><p>Legolas</p></div>
+				  				<div class="comment__date"><p>03.12.2017</p></div>
+				  				<div class="comment__text"><p>Great shirt. I like the way it can be combined both with jeans and classic trousers.</p></div>
+				  			</div>
+				  		</div>
+				  		<div class="col-md-6">
+				  			<h4>Add a review</h4>
+				  			<form action="">
+				  				<input placeholder="Name" type="text">
+				  				<input placeholder="Email" type="text">
+				  				<textarea placeholder="Your review"></textarea> 
+				  				<div class="post__buttons">
+									<button>
+										Add review
+									</button>
+								</div>
+				  			</form>
+				  		</div>
+				  	</div>
 				</div>
 			</div>
-		</div>			
+		</div>
+			<div class="relatedProducts">
+				<div class="row myContainer ">
+				<h2>RELATED PRODUCTS</h2>
+				<div class=" col-sm-3 ">	
+					<div class="product">
+						<a href="single.html">
+							<div class="product__img">
+								<img src="../images/products/1.jpg" alt="">
+								<div class="product__caption">
+									<button>
+										<i class="fas fa-cart-plus"></i>
+										<p>Add to cart</p>
+									</button>
+									<button><i class="fas fa-search-plus"></i></button>
+									<button><i class="far fa-heart"></i></button>
+								</div>
+							</div>
+							<div class="product__title">
+								<h3>ANCHOR DENIM SHIRT</h3>
+							</div>
+							<div class="product__price">
+								<h3>£189.00</h3>
+							</div>
+							<div class="product__description">
+								<p>Comforting summer blend</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class=" col-sm-3">				
+					<div class="product">
+						<div class="product__img">
+							<img src="../images/products/2.jpg" alt="">
+							<div class="product__caption">
+								<button>
+									<i class="fas fa-cart-plus"></i>
+									<p>Add to cart</p>
+								</button>
+								<button><i class="fas fa-search-plus"></i></button>
+								<button><i class="far fa-heart"></i></button>
+							</div>
+						</div>
+						<div class="product__title">
+							<h3>DINGY ROSES T-SHIRT</h3>
+						</div>
+						<div class="product__price">
+							<h3>£199.00</h3>
+						</div>
+						<div class="product__description">
+							<p>Vintage art style</p>
+						</div>
+					</div>
+				</div>
+				<div class=" col-sm-3">	
+					<div class="product">
+						<div class="product__img">
+							<img src="../images/products/3.jpg" alt="">
+							<div class="product__caption">
+								<button>
+									<i class="fas fa-cart-plus"></i>
+									<p>Add to cart</p>
+								</button>
+								<button><i class="fas fa-search-plus"></i></button>
+								<button><i class="far fa-heart"></i></button>
+							</div>
+						</div>
+						<div class="product__title">
+							<h3>DOTTED SHIRT</h3>
+						</div>
+						<div class="product__price">
+							<h3>£299.00</h3>
+						</div>
+						<div class="product__description">
+							<p>Casual classic print</p>
+						</div>
+					</div>
+				</div>
+				<div class=" col-sm-3">	
+					<div class="product">
+						<div class="product__img">
+							<img src="../images/products/4.jpg" alt="">
+							<div class="product__caption">
+								<button>
+									<i class="fas fa-cart-plus"></i>
+									<p>Add to cart</p>
+								</button>
+								<button><i class="fas fa-search-plus"></i></button>
+								<button><i class="far fa-heart"></i></button>
+							</div>
+						</div>
+						<div class="product__title">
+							<h3>DENIM VEST</h3>
+						</div>
+						<div class="product__price">
+							<h3>£269.00</h3>
+						</div>
+						<div class="product__description">
+							<p>It's never too much denim</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<h3>© BarmotinCorp - Elite ThemeForest Author.</h3>
+		</footer>			
 	</div>
 	<script type="text/javascript" src="../js/menu.js"></script>
 	<script type="text/javascript" src="../js/counter.js"></script>

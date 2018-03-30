@@ -30,10 +30,15 @@ body,html{
     height: 100%;
 }
 
+#myContainer{
+		margin:130px auto 0 !important;
+
+}
+
 .myContainer{
 	width: 100%;
 	max-width: 1300px;
-	margin:130px auto 0 !important;
+	margin:30px auto 0 !important;
 	.col-md-6{
 		padding:0 20px; 
 	}
@@ -433,9 +438,9 @@ header{
 		}
 	}
 	.logo{
-		width: 150px;
-		height: 150px;
-		margin: 40px 10px 20px;
+		width: 100px;
+    	height: 80px;
+    	margin: 40px 40px 20px;
 		position: fixed;
 	    top: 0;
 		img{
@@ -509,8 +514,9 @@ header{
 	    width: 200px;
 	}
 	img{
-		width: 100px;
-		height: 100px;
+		padding: 15px;
+		//width: 100px;
+		height: 60px;
 		object-fit:cover;
 		
 	}
@@ -910,20 +916,118 @@ footer{
 }
 
 .tab{
+	margin: 20px 0;
 	&__buttons{
+		text-align: center;
+		margin: 20px auto;
 		button{
 			padding: 15px;
 			border:1px solid transparent;
 			background: transparent;
 			margin:10px;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 12px;
+			letter-spacing: 1px;
+			@include transition(all,0.3s);
 			&:hover{
-				border: 1px solid lighten($mainColorText,30%);
+				@include transition(all,0.3s);
+				//border: 1px solid lighten($mainColorText,40%);
 			}
 
 		}
 		&_active{
-			border: 1px solid lighten($mainColorText,30%) !important;
+			border: 1px solid lighten($mainColorText,50%) !important;
 		}
 	}
-	&__value{}
+	&__value{
+		font-family: TeXGyreAdventor;
+		letter-spacing: 1px;
+		line-height: 24px; 
+		color: $mainColorText;
+		font-size: 14px;
+	}
+	h4{
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 12px;
+		letter-spacing: 1px;
+		color: $mainColorDark;
+	}
+}
+
+table{
+	width: 100%;
+	th,td{
+		width: 50%;
+		padding: 15px;
+	}
+	th{
+		text-align: right;
+		color:lighten($mainColorText,30%);
+
+	}
+	td{
+		color: $mainColorDark;
+	}
+	tr{
+		border-bottom: 1px solid lighten($mainColorText,50%);
+	}
+}
+
+form{
+	input,textarea{
+		width: 100%;
+		padding: 10px 0;
+		margin: 15px 0;
+		border:none;
+		border-bottom: 1px solid lighten($mainColorText,50%);
+		&:focus{
+			outline: none;
+		}
+	}
+	textarea{
+		height: 160px;
+	}
+	.post__buttons{
+		    margin: 15px 0px;
+
+		button{
+			padding: 12px 50px;
+		}
+	}
+}
+
+.comment{
+	margin: 10px 0 ;
+	border-bottom: 1px solid lighten($mainColorText,50%);
+	padding: 10px 0 ;
+	font-family: TeXGyreAdventor;
+	color: $mainColorDark;
+	&__name{
+		font-weight: 600;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	&__date{
+		color:lighten($mainColorText,30%);
+		font-style: italic;
+		font-family: times new roman;
+		font-size: 11px;
+	}
+	&__rating{}
+	&__text{
+		font-style: italic;
+		font-family: times new roman;
+		font-size: 14px;
+	}
+}	
+.relatedProducts{
+	margin-bottom: 30px;
+	h2{
+		    font-size: 14px;
+	    font-weight: 600;
+	    letter-spacing: 2px;
+	    padding: 25px;
+	}	
 }

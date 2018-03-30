@@ -22,6 +22,9 @@ $(document).ready(function(){
 
     function setGridWidth(){
         var sidebarWidth = $('.sidebar').width();
+        if(sidebarWidth == null){
+            sidebarWidth = 0;
+        }
         var screenWidth = $(window).width() - sidebarWidth;
         var gridWidth = 0;
 
@@ -49,6 +52,7 @@ $(document).ready(function(){
         $(window).scroll(function() {
             if($(this).scrollTop() >= 1) {
                 $('header').addClass('stickMenu');
+                $('header > .logo > img').src="../images/logo2.png";
             }
             else{
                 $('header').removeClass('stickMenu');
